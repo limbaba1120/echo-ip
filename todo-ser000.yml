@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name:  todo-service
+spec:
+  selector:
+    app: todo-oss
+  ports:
+    - protocol: TCP
+      port: 9091
+      targetPort: 80
+  type: LoadBalancer 

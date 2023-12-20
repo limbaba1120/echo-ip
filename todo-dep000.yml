@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: todo-oss
+  template:
+    metadata:
+      labels:
+        app: todo-oss
+    spec:
+      containers:
+      - name: todo-container
+        image: docker.io/snhng/todo-oss:latest
+        ports:
+        - containerPort: 80
